@@ -1,0 +1,42 @@
+﻿@model List<Covid.Models.Place>
+
+@{
+    ViewBag.Title = "TOP 10 COVID-19 CASES BY PROVINCE";
+}
+
+<h2>Top 10 Regions By Province</h2>
+
+
+<table class="table" id="report">
+    <thead>
+        <tr>
+            <th>
+                PROVINCE
+            </th>
+            <th>
+                CASES
+            </th>
+            <th>
+                DEATHS
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.confirmed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.deaths)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
